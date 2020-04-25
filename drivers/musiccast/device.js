@@ -26,6 +26,8 @@ class YamahaMusicCastDevice extends Homey.Device {
             this.runMonitor();
             this.deviceLog('initialized');
         });
+
+        this.inputs = Object.values(InputEnum);
     }
 
     registerListeners() {
@@ -35,6 +37,7 @@ class YamahaMusicCastDevice extends Homey.Device {
             return this.getClient().setPower(value);
         });
         this.registerCapabilityListener('volume_set', value => {
+            console.log('SET VOLUME: ' + value);
             return this.getClient().setVolume(value * 100);
         });
         this.registerCapabilityListener('volume_mute', value => {
@@ -104,6 +107,7 @@ class YamahaMusicCastDevice extends Homey.Device {
     }
 
     runMonitor() {
+        console.log('Run monitor');
         setTimeout(() => {
             this.updateDevice()
                 .then(() => {
@@ -144,6 +148,7 @@ class YamahaMusicCastDevice extends Homey.Device {
     }
 
     updateDevice(resolve, reject) {
+        console.log('Update device');
         return this.getClient().getState().then((receiverStatus) => {
             this.syncMusicCastStateToCapabilities(receiverStatus);
         }).catch(error => {
@@ -157,7 +162,7 @@ class YamahaMusicCastDevice extends Homey.Device {
             if (error.code !== 'EHOSTUNREACH') {
                 throw error;
             }
-        });;
+        });
     }
 
     _onCapabilitiesSet(valueObj, optsObj) {
@@ -198,11 +203,21 @@ class YamahaMusicCastDevice extends Homey.Device {
     }
 
     syncMusicCastStateToCapabilities(state) {
+
+        console.log(state);
+
         this.setCapabilityValue('onoff', state.power).catch(this.error);
-        this.setCapabilityValue('volume_set', state.volume).catch(this.error);
+
+        console.log('Try to trigger volume set to: '+state.volume);
+        console.log('Set input: ' + this.inputs.indexOf(state.input));
+        this.setCapabilityValue('volume_set', state.volume / 100).catch(this.error);
         this.setCapabilityValue('volume_mute', state.muted).catch(this.error);
         this.setCapabilityValue('input_selected', state.input).catch(this.error);
-        this.setCapabilityValue('surround_program', state.sound_program).catch(this.error);
+
+        //this.getClient().setInput(state.input);
+
+        // Not all MusicCast devices have this option, so ignore when no state is found
+        //if(state.sound_program) this.setCapabilityValue('surround_program', state.sound_program).catch(this.error);
     }
 }
 

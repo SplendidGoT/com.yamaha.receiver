@@ -44,6 +44,7 @@ class YamahaMusicCastDriver extends Homey.Driver {
                         pairingDevice.name = name.text + ': ' + deviceInfo.model_name;
                         pairingDevice.data.id = deviceInfo.device_id;
                         pairingDevice.data.name = name.text + ': ' + deviceInfo.model_name;
+                        pairingDevice.inputs = features.input_list;
 
                         callback(null, [pairingDevice]);
                     });
@@ -81,7 +82,7 @@ class YamahaMusicCastDriver extends Homey.Driver {
     /**
      * @returns YamahaExtendedControlClient
      */
-    getClient(ipAddress, zone = 'main') {
+    getClient(ipAddress, zone) {
         if (typeof this._yamahaExtendedControlClient === "undefined" || this._yamahaExtendedControlClient === null) {
             this._yamahaExtendedControlClient = new YamahaExtendedControlClient(ipAddress, zone);
         }

@@ -1,17 +1,15 @@
 {
-  "id": "martens.yamaha",
+  "id": "vdhoop.yamaha",
   "version": "0.5.1",
   "compatibility": ">=3.0.0",
   "sdk": 2,
   "name": {
-    "en": "Yamaha receiver",
-    "nl": "Yamaha versterker",
-    "de": "Yamaha Verstärker"
+    "en": "Yamaha MusicCast"
   },
   "description": {
-    "en": "Adds support for Yamaha receivers.",
-    "nl": "Voegt ondersteuning voor Yamaha versterkers.",
-    "de": "Fügt Unterstützung für Yamaha-Verstärker hinzu."
+    "en": "Adds support for Yamaha MusicCast.",
+    "nl": "Voegt ondersteuning voor Yamaha MusicCast.",
+    "de": "Fügt Unterstützung für Yamaha MusicCast hinzu."
   },
   "category": [
     "music",
@@ -21,12 +19,14 @@
     "en": [
       "receiver",
       "amplifier",
-      "audio"
+      "audio",
+      "musiccast"
     ],
     "nl": [
       "ontvanger",
       "versterker",
-      "audio"
+      "audio",
+      "musiccast"
     ]
   },
   "permissions": [],
@@ -35,8 +35,8 @@
     "small": "/assets/images/small.png"
   },
   "author": {
-    "name": "Lucas van der Have",
-    "email": "lucasvdhave@gmail.com"
+    "name": "Mark van der Hoop",
+    "email": "splendiddesigns@gmail.com"
   },
   "contributing": {
     "donate": {
@@ -47,6 +47,10 @@
   },
   "contributors": {
     "developers": [
+      {
+        "name": "Mark van der Hoop",
+        "email": "splendiddesigns@gmail.com"
+      },
       {
         "name": "Lucas van der Have",
         "email": "lucasvdhave@gmail.com"
@@ -64,11 +68,11 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/lucasvdh/com.yamaha.receiver/issues"
+    "url": "https://github.com/SplendidGoT/com.yamaha.receiver/issues"
   },
-  "source": "https://github.com/lucasvdh/com.yamaha.receiver",
-  "homepage": "https://github.com/lucasvdh/com.yamaha.receiver",
-  "support": "mailto:lucasvdhave@gmail.com",
+  "source": "https://github.com/SplendidGoT/com.yamaha.receiver",
+  "homepage": "https://github.com/SplendidGoT/com.yamaha.receiver",
+  "support": "mailto:splendiddesigns@gmail.com",
   "discovery": {
     "yamaha-receiver-discovery": {
       "type": "ssdp",
@@ -100,147 +104,87 @@
       "setable": true,
       "values": [
         {
-          "id": "HDMI1",
+          "id": "napster",
           "title": {
-            "en": "HDMI1"
+            "en": "Napster"
           }
         },
         {
-          "id": "HDMI2",
-          "title": {
-            "en": "HDMI2"
-          }
-        },
-        {
-          "id": "HDMI3",
-          "title": {
-            "en": "HDMI3"
-          }
-        },
-        {
-          "id": "HDMI4",
-          "title": {
-            "en": "HDMI4"
-          }
-        },
-        {
-          "id": "HDMI5",
-          "title": {
-            "en": "HDMI5"
-          }
-        },
-        {
-          "id": "HDMI6",
-          "title": {
-            "en": "HDMI6"
-          }
-        },
-        {
-          "id": "HDMI7",
-          "title": {
-            "en": "HDMI7"
-          }
-        },
-        {
-          "id": "HDMI8",
-          "title": {
-            "en": "HDMI8"
-          }
-        },
-        {
-          "id": "AV1",
-          "title": {
-            "en": "AV1"
-          }
-        },
-        {
-          "id": "AV2",
-          "title": {
-            "en": "AV2"
-          }
-        },
-        {
-          "id": "AV3",
-          "title": {
-            "en": "AV3"
-          }
-        },
-        {
-          "id": "AV4",
-          "title": {
-            "en": "AV4"
-          }
-        },
-        {
-          "id": "AV5",
-          "title": {
-            "en": "AV5"
-          }
-        },
-        {
-          "id": "AV6",
-          "title": {
-            "en": "AV6"
-          }
-        },
-        {
-          "id": "AUDIO1",
-          "title": {
-            "en": "AUDIO1"
-          }
-        },
-        {
-          "id": "AUDIO2",
-          "title": {
-            "en": "AUDIO2"
-          }
-        },
-        {
-          "id": "AUDIO3",
-          "title": {
-            "en": "AUDIO3"
-          }
-        },
-        {
-          "id": "TUNER",
-          "title": {
-            "en": "TUNER"
-          }
-        },
-        {
-          "id": "V-AUX",
-          "title": {
-            "en": "V-AUX"
-          }
-        },
-        {
-          "id": "SERVER",
-          "title": {
-            "en": "SERVER"
-          }
-        },
-        {
-          "id": "NET RADIO",
-          "title": {
-            "en": "NET RADIO"
-          }
-        },
-        {
-          "id": "USB",
-          "title": {
-            "en": "USB"
-          }
-        },
-        {
-          "id": "Spotify",
+          "id": "spotify",
           "title": {
             "en": "Spotify"
           }
         },
         {
-          "id": "AirPlay",
+          "id": "juke",
           "title": {
-            "en": "AirPlay"
+            "en": "Juke"
+          }
+        },
+        {
+          "id": "qobuz",
+          "title": {
+            "en": "Gobuz"
+          }
+        },
+        {
+          "id": "tidal",
+          "title": {
+            "en": "Tidal"
+          }
+        },
+        {
+          "id": "deezer",
+          "title": {
+            "en": "Deezer"
+          }
+        },
+        {
+          "id": "airplay",
+          "title": {
+            "en": "Airplay"
+          }
+        },
+        {
+          "id": "mc_link",
+          "title": {
+            "en": "Mc_link"
+          }
+        },
+        {
+          "id": "server",
+          "title": {
+            "en": "Server"
+          }
+        },
+        {
+          "id": "net_radio",
+          "title": {
+            "en": "Net Radio"
+          }
+        },
+        {
+          "id": "bluetooth",
+          "title": {
+            "en": "Bluetooth"
+          }
+        },
+        {
+          "id": "tv",
+          "title": {
+            "en": "TV"
+          }
+        },
+        {
+          "id": "bd_dvd",
+          "title": {
+            "en": "BD/DVD"
+          }
+        },
+        {
+          "id": "analog",
+          "title": {
+            "en": "Analog"
           }
         }
       ]
@@ -661,8 +605,7 @@
               "en": "Select receiver",
               "nl": "Selecteer versterker",
               "de": "Verstärker auswählen"
-            },
-            "filter": "driver_id=receiver"
+            }
           }
         ]
       },
@@ -755,8 +698,7 @@
               "en": "Select receiver",
               "nl": "Selecteer versterker",
               "de": "Verstärker auswählen"
-            },
-            "filter": "driver_id=receiver"
+            }
           },
           {
             "name": "input",
